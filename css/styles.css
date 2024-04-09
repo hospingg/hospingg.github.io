@@ -1,6 +1,5 @@
 
 body{
-    display: grid;
     margin: 0;
 }
 body::-webkit-scrollbar {   
@@ -20,15 +19,51 @@ header{
     height: 850px;
     background-size: cover;
 }
+
+#white-header{
+    background: #FFF;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 20px;
+    position: relative;
+}
+#white-header .wrapper{
+    min-height: 122px;
+}
+#white-header .logo{
+    margin-top: 21px;
+}
+#white-header .logo img{
+    width: 166px;
+}
+
+.bg{
+    width: 100%;
+    display: flex;
+}
+.bg img{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+#white-header .nav-bar{
+    margin-top: 25px;
+}
+
+#white-header ul{
+    margin: 0 0 22px 0;
+}
+
 .main-page{
     position: relative;
+    display: grid;
     width: 100%;
 }
 .background img{
     width: 100%;
 }
 .wrapper{
-    max-width: 1127px;
+    max-width: 1110px;
     width: 100%;
     margin: 0 auto;
 }
@@ -57,7 +92,7 @@ header{
 }
 .search{
     border-bottom: 1px solid black;
-    height: 28.2px;
+    height: 28px;
     display: flex;
     align-items: center;
 }
@@ -97,13 +132,12 @@ a{
     color: black;
     text-decoration: none;
 }
-h2::selection, h3::selection, p::selection, br::selection {
+h2::selection, h3::selection, h4::selection, p::selection, b::selection, br::selection {
     background: #B9B9B9;
     color: #FFF;
 }
 .nav-bar ul {
     list-style: none;
-    padding: 0;
     display: flex;
     justify-content: space-between;
     height: 26px;
@@ -139,7 +173,7 @@ h2{
     font-weight: bold;
     transition: color 0.2s;
     font-family: "Heebo", sans-serif;
-    font-weight: 600;
+    font-weight: 650;
 }
 .nav-bar ul li a:hover{
     color: #367246;
@@ -216,6 +250,39 @@ h2{
     color: #324950;
     font-size: 20px;
     height: 29;
+}
+.note{
+    padding: 21px 0 30px 0;
+    display: grid;
+    grid-template-columns: 5px 1036px;
+    grid-gap: 27px;
+    align-items: center;
+}
+
+
+.table-3c{
+    background: #FFFAFA;
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 30px;
+    padding: 50px 22px 51px 20px;
+    max-width: 1110px;
+    margin: 0 auto 19px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 4px 4px;
+    column-count: 3;
+}
+
+.table-3c div {
+    min-width: 350px;
+    width: min-content;
+}
+.table-3c h3{
+    font-family: "Roboto Slab", serif;
+    font-size: 20px;
+    line-height: 142.7%;
+    max-width: 295px;
+    color: #324950;
+    margin: 0 0 15px;
 }
 
 .content{
@@ -331,4 +398,69 @@ h2{
     align-items: center;
     justify-content: center;
     user-select: none;
+}
+
+.product-page{
+    background-color: #fcf0f0;
+}
+.product-page h2{
+    font-size: 44px;
+    padding: 51px 0 40px 0;
+    margin: 0;
+}
+
+.product-page p{
+    font-size: 17px;
+    font-family: "Roboto Slab", serif;
+    color: #324950;
+    line-height: 150%;
+    margin: 0;
+}
+.product-page .row svg{
+    padding-bottom: 41px;
+}
+.product-cataloge{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 10px 0 20px;
+}
+
+
+#product{
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px 30px 15px;
+}
+#product img{
+    max-height: 252px;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    min-width: 349px;
+}
+#product div{
+    text-align: center;
+    line-height: 142.7%;
+    width: 100%;
+    background-color: #fff;
+    font-size: 16px;
+    color: #57984C;
+    padding: 9px 0;
+    min-height: 51px;
+}
+#product h4{
+    margin: 0;
+    font-weight: bold;
+    font-family: "Roboto Slab", serif;
+    font-size: 20px;
+}
+
+#product p{
+    font-family: "Roboto Slab", serif;
+    font-size: 16px;
+    color: #57984C;
+    line-height: 142.7%;
 }
