@@ -259,6 +259,12 @@ h2{
     align-items: center;
 }
 
+.note div{
+    width: 5px;
+    background-color: #EB5757;
+    height: calc(100% + 10px);
+    border-radius: 10px;
+}
 
 .table-3c{
     background: #FFFAFA;
