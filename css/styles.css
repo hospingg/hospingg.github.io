@@ -132,7 +132,7 @@ a{
     color: black;
     text-decoration: none;
 }
-h2::selection, h3::selection, h4::selection, p::selection, b::selection, br::selection {
+h1::selection, h2::selection, h3::selection, h4::selection, p::selection, li::selection, b::selection, br::selection {
     background: #B9B9B9;
     color: #FFF;
 }
