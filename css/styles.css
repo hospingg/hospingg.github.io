@@ -23,7 +23,7 @@ header{
 #white-header{
     background: #FFF;
     height: auto;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 20px;
     position: relative;
 }
 #white-header .wrapper{
@@ -149,6 +149,9 @@ ul{
 li {
     list-style: none;
 }
+li::marker{
+    color: #57984C;
+}
 img{
     user-select: none;
 }
@@ -252,17 +255,21 @@ h2{
     height: 29;
 }
 .note{
-    padding: 21px 0 30px 0;
+    padding: 12px 0 10px 0;
+    grid-gap: 23px;
     display: grid;
+    align-items: center;
+}
+.note#defolt{
+    padding: 21px 0 30px 0;
     grid-template-columns: 5px 1036px;
     grid-gap: 27px;
-    align-items: center;
 }
 
 .note div{
     width: 5px;
     background-color: #EB5757;
-    height: calc(100% + 10px);
+    height: calc(100% + 10%);
     border-radius: 10px;
 }
 
@@ -297,6 +304,109 @@ h2{
     background-position-y: 76px;
     background-position-x: center;
 }
+
+.item-page#tomato{
+    background: url(../images/UnionTomato.svg) #f7f7f7 no-repeat;
+    background-position-y: -76px;
+    background-position-x: center;
+}
+
+.item-page .wrapper .row .w-2:last-child .option-list{
+    padding-left: 15px;
+}
+
+.item-page a{
+    gap: 15px;
+    color: #57984C;
+    display: flex;
+    align-items: center;
+    font-family: "Roboto Slab", serif;
+    margin-bottom: 19px;
+}
+
+.product-image{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.option-list{
+    padding: 15px 0;
+    color: #57984C;
+}
+.option-list h4{
+    padding-bottom: 11px;
+}
+
+.option-list ul li{
+    font-family: "Roboto Slab", serif;
+    color: #324950;
+    line-height: 200%;
+    font-size: 17px;
+    list-style: inside;
+}
+
+.PDF{
+    cursor: pointer;
+    font-family: "Roboto Slab", serif;
+    font-weight: bold;
+    color: #57984C;
+    background-color: #FFF;
+    width: 225px;
+    height: 55px;
+    font-size: 17px;
+    border: solid  #57984C 2px;
+    border-radius:  55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 30px 0 26px;
+    transition: box-shadow 0.2s;
+}
+
+.PDF:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.item-page{
+    padding-bottom: 100px;
+}
+
+.item-page .wrapper{
+    padding-top: 18px;
+}
+
+.item-page .row{
+    padding-bottom: 19px;
+    margin: 0;
+}
+.item-page h1{
+    color: #57984C;
+    margin: 0;
+    font-size: 54px;
+    font-family: "Roboto Slab", serif;
+    line-height: 142.7%;
+    padding-bottom: 35px;
+}
+
+.item-page h1::first-line{
+    color: #324950;
+}
+
+#tomato.note div{
+    height: 80px;
+    width: 80px;
+    background: url(../images/TomatoIcon.svg) no-repeat;
+}
+#tomato.note {
+    font-size: 30px;
+    color: #CF2333;
+    font-weight: bold;
+    font-family: "Roboto Slab", serif;
+    grid-template-columns: 80px 395px;
+}
+
 .content .wrapper {
     padding-top: 30px;
 }
@@ -329,7 +439,7 @@ h2{
     min-height: 640px;
 }
 .activities-list{
-    padding-top: 25px;
+    padding-top: 25px 0 40px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -375,7 +485,8 @@ h2{
     flex-wrap: wrap;
 }
 .profile-management-products{
-    min-width: 724px;
+    max-width: 724px;
+    width: 100%;
 }
 .profile-management-products ul{
     display: flex;
@@ -439,8 +550,14 @@ h2{
     display: flex;
     flex-direction: column;
     margin: 0 15px 30px 15px;
+    overflow: hidden;
+}
+
+#product:hover img{
+    transform: scale(1.2); 
 }
 #product img{
+    transition: transform 0.5s;
     max-height: 252px;
     object-fit: cover;
     object-position: center;
@@ -456,8 +573,9 @@ h2{
     color: #57984C;
     padding: 9px 0;
     min-height: 51px;
+    position: relative;
 }
-#product h4{
+h4{
     margin: 0;
     font-weight: bold;
     font-family: "Roboto Slab", serif;
