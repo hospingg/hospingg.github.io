@@ -230,6 +230,7 @@ form .w-2:last-child{
     font-size: 17px;
     background-color: #57984C;
     border-radius: 60px;
+    cursor: pointer;
 }
 .our-adress{
     font-family: "Roboto Slab", serif;
