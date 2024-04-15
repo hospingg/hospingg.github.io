@@ -83,6 +83,10 @@ header{
     width: 50%;
     float: left;
 }
+.w-3{
+    width: 33%;
+    float: left;
+}
 .w-4{
     width: 25%;
 }
@@ -106,6 +110,7 @@ header{
 }
 textarea:focus, input:focus{
     outline: none;
+    
 }
 .search button{
     background: url(../images/ico_search.svg) no-repeat;
@@ -160,6 +165,92 @@ h2{
     color: #324950;
     font-size: 64px;
     margin: 25px 0;
+}
+form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 9px;
+    padding-bottom: 51px; 
+}
+form p, input[type="text"], input[type="email"],option, select, textarea{
+    color: #324950;
+    font-size: 17px;
+    font-family: "Roboto Slab", serif;
+    line-height: 150%;
+}
+form textarea{
+    min-height: 390px;
+}
+
+form input, form select, form button, form textarea{
+    resize: none;
+    height: 51px;
+    width: calc(100% - 22px);
+    padding-inline: 10px;
+    margin: 11px 0 20px;
+    border-radius: 10px;
+    border: solid 1px #DADADA;
+}
+form select{
+    width:100%;
+    height: 55px;
+}
+#comment{
+    min-height: 386px;
+}
+
+form .w-2{
+    width: auto;
+    min-width: 350px;
+}
+
+form .w-2:last-child{
+    min-width:635px;
+}
+
+#verification img{
+    width: 15.6%;
+}
+#verification{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#verification input {
+    width: 35.43%;
+}
+#verification input[type="submit"]{
+    font-family: "Roboto Slab", serif;
+    width: 40.15%;
+    font-weight: 300;
+    color: #FFF;
+    line-height: 200%;
+    font-size: 17px;
+    background-color: #57984C;
+    border-radius: 60px;
+}
+.our-adress{
+    font-family: "Roboto Slab", serif;
+    font-size: 17px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 44px 0;
+    line-height: 150%;
+}
+.our-adress p{
+    margin: 17px 0 0;
+    color: #324950;
+}
+.our-adress h4, .our-adress a{
+    margin-bottom: 10px;
+    color: #57984C;
+    font-size: 20px;
+}
+.our-adress a{
+    font-size: 17px;
 }
 .nav-bar{
     min-width: 499px;
@@ -515,6 +606,9 @@ h2{
     align-items: center;
     justify-content: center;
     user-select: none;
+}
+#contact-us{
+    background-color: #f7f7f7;
 }
 
 .product-page{
