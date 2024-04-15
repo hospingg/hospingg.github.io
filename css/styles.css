@@ -180,7 +180,7 @@ form p, input[type="text"], input[type="email"],option, select, textarea{
     line-height: 150%;
 }
 form textarea{
-    min-height: 366px;
+    min-height: 367px;
     padding: 10px 0;
 }
 
