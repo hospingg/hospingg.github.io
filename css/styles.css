@@ -182,6 +182,7 @@ form p, input[type="text"], input[type="email"],option, select, textarea{
 form textarea{
     min-height: 367.5px;
     padding: 10px 0;
+    margin-bottom: 16px;
 }
 
 form input, form select, form button, form textarea{
