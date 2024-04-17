@@ -1,10 +1,8 @@
 let button = document.getElementById('burger-bar');
-let logo = document.getElementsByClassName('logo')[0];
-let search = document.getElementsByClassName('search')[0];
 let navigation = document.getElementsByClassName('nav-bar')[0];
 let list = document.querySelector('.nav-bar ul');
 let header = document.getElementsByTagName('header')[0];
-let elementsWithDisplayNone = document.querySelectorAll('.product-list, .content, .profile-management-products-social-media, #slider, .bg, #contact-us, .our-adress, .product-page, .item-page');
+let elementsWithDisplayNone = document.querySelectorAll('.product-list, .content, .profile-management-products-social-media, #slider, .bg, #contact-us, .our-adress, .product-page, .item-page, .logo, .search');
 let whiteHeader = document.getElementById('white-header');
 
 document.getElementById('burger-bar').addEventListener('click', function() {
@@ -12,11 +10,7 @@ document.getElementById('burger-bar').addEventListener('click', function() {
     if (button.classList.contains('deactivated')) {
         button.classList.remove('deactivated');
         button.classList.add('activated');
-        
-        logo.classList.add('hide-element');
-        search.classList.add('hide-element');
-        
-
+    
         list.classList.add('show-list');
         navigation.classList.add('full-menu');
         header.classList.add('full-menu-header');
@@ -25,14 +19,9 @@ document.getElementById('burger-bar').addEventListener('click', function() {
         button.classList.remove('activated');
         button.classList.add('deactivated');
 
-        logo.classList.remove('hide-element');
-        search.classList.remove('hide-element');
-
         list.classList.remove('show-list');
         navigation.classList.remove('full-menu');
         header.classList.remove('full-menu-header');
-
-        
     }
     
     
@@ -57,10 +46,7 @@ function handleScreenSizeChange(event) {
     if (event.matches) {
         button.classList.remove('activated');
         button.classList.add('deactivated');
-
-        logo.classList.remove('hide-element');
-        search.classList.remove('hide-element');
-
+        
         list.classList.remove('show-list');
         navigation.classList.remove('full-menu');
         header.classList.remove('full-menu-header');

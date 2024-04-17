@@ -172,7 +172,7 @@ a{
     color: black;
     text-decoration: none;
 }
-h1::selection, h2::selection, h3::selection, h4::selection, p::selection, li::selection, b::selection, br::selection {
+*::selection{
     background: #B9B9B9;
     color: #FFF;
 }
@@ -214,9 +214,6 @@ form p, input[type="text"], input[type="email"],option, select, textarea{
     font-size: 17px;
     font-family: "Roboto Slab", serif;
     line-height: 150%;
-}
-.hide-element{
-    visibility: hidden;
 }
 .hide-element-all{
     display: none;
