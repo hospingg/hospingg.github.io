@@ -909,22 +909,14 @@ h4{
         display: block;
         position: absolute;
     }
-    
-}
-@media screen and (max-width: 400px) {
-    form input, form select, form button, form textarea {
-        height: 30px;
-    }
     #verification img {
         width: auto;
     }
     #verification input {
-        width: 45%;
+        width: calc(100% - 121px);
     }
     #verification input[type="submit"] {
         width: 100%;
-        font-size: 15px;
-        line-height: 120%;
     }
     #verification {
         flex-wrap: wrap;
@@ -933,5 +925,18 @@ h4{
         max-height: 200px;}
     .item-page h1 {
         font-size: 30px;
+    }
+    
+}
+@media screen and (max-width: 400px) {
+    form input, form select, form button, form textarea {
+        height: 30px;
+    }
+    #verification input {
+        width: calc(100% - 121px);
+    }
+    #verification input[type="submit"] {
+        font-size: 15px;
+        line-height: 120%;
     }
 }
