@@ -1,0 +1,247 @@
+@media screen and (max-width: 1280px)  {
+    .main-page .wrapper .row {
+        display: flex;
+        padding: 0 20px;
+    }
+    .wrapper .row {
+        padding: 0 20px;
+    }
+    .product-list ul {
+        justify-content: space-around;
+    }
+    .text-container .w-2 {
+        margin: 0 10px;
+    }
+    #contact-us .wrapper .row{
+        padding: 0 20px;
+    }
+    .profile-management-products-social-media .wrapper {
+        justify-content: space-around;
+    }
+    .table-3c div {
+        width: fit-content;
+    }
+    .product-page{
+        padding: 0 50px;
+    } 
+    .w-2{
+        width: 100% !important;
+    }
+    .main-page .wrapper #main-row .w-2, .item-page .w-2{
+        width: 50% !important;
+    }    
+    .item-page{
+        padding: 0 50px 100px;
+    }
+    .product-image img{
+        width: 100%;
+    }
+    .product-image{
+        align-items: center;
+    }
+    .item-page h1 {
+        padding: 0 10px 35px 0;
+    }
+}
+
+@media screen and (max-width: 1024px)  {
+    .wrapper{
+        margin: 0 auto;
+    }
+    .text-container {
+        flex-direction: column;
+        text-align: center;
+        width: calc(100% - 50px);
+        margin: 0 auto;
+    }
+    .wrapper .row:last-child .text-container{
+        flex-direction: column-reverse;
+    }
+    
+    .text-container .w-2 img{
+        width: 100%;
+    }
+    .profile-management-products-social-media .wrapper {
+        flex-direction: column;
+        padding: 0 20px;
+        width: calc(100% - 40px);
+    }
+    .table-3c div {
+        width: fit-content;
+    }
+    
+    #tomato.note{
+        grid-template-columns: 80px calc(100% - 80px);
+    }
+    
+    .note{
+        width: calc(100% - 23px);
+    }
+}
+
+
+@media screen and (max-width: 932px)  {
+    .main-page .wrapper #main-row .w-2, .item-page .w-2{
+        width: 100% !important;
+    }
+    .main-page .wrapper .row{
+        padding: 0 35px;
+        display: block;
+    }
+    .search-nav-bar {
+        height: 100%;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+    .nav-bar{
+        min-width: none;
+    }
+    .logo {
+        text-align: center;
+    }
+    #white-header ul{
+        height: auto;
+    }
+    .main-page{
+        display: flex;
+    }
+    .search-nav-bar {
+        float: none;
+    }
+    .search{
+        width: 100%;
+    }
+    .search input[type="text"] {
+        width: 100%;
+    }
+    #slider {
+        padding-top:100px;
+    }
+    .nav-bar ul {
+        display: none;
+    }
+    .nav-bar ul li{
+        width: 100%;
+    }
+
+    .nav-bar ul li a {
+        display: block;
+        width: 100%;
+        line-height: 75px;
+    }
+    .table-3c div {
+        min-width: auto;
+    }
+    #product {
+        /* margin: 0 0 30px ; */
+        min-width: auto;
+    }
+    .profile-management-products ul li{
+        margin: 0 10px;
+    }
+    .profile-management-products ul{
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 0;
+    }
+    form .w-2{
+        min-width: auto!important;
+    }
+    .wrapper .row {
+        padding: 0 10px;
+    }
+    .item-page h1 {
+        font-size: 30px;
+    }
+    .product-page h2 {
+        text-align: center;
+        font-size: 35px;
+    }
+    .product-page .row svg {
+        margin: 0 auto;
+        width: 100%;}
+    
+    #burger-bar{
+        display: block;
+        position: absolute;
+    }
+    #verification img {
+        width: auto;
+    }
+    #verification input {
+        width: calc(100% - 121px);
+    }
+    #verification input[type="submit"] {
+        width: 100%;
+    }
+    #verification {
+        flex-wrap: wrap;
+    }
+    #product img {
+        max-height: 150px;
+    }
+    
+    
+}
+@media screen and (max-width: 400px) {
+    form input, form select, form button, form textarea {
+        height: 30px;
+    }
+    #slider h1 {
+        font-size: 36px;
+    }
+    h2{
+        font-size: 50px;
+    }
+    .product-page h2 {
+        padding-bottom: 30px;
+    }
+    .activities-list .card {
+        min-width: auto;
+    }
+    h4{
+        font-size: 15px;
+    }
+    #tomato.note {
+        font-size: 20px;
+        grid-template-columns: 60px calc(100% - 60px);
+    }
+    #tomato.note div {
+        height: 60px;
+        width: 100%;
+        background-size: contain;
+    }
+    #product p {
+        font-size: 12px;
+        line-height: 120%;
+        font-weight: bold;
+        margin: 0 10px;
+    }
+    .product-page h2 {
+        font-size: 30px;
+    }
+    .product-page, .item-page {
+        padding: 0 25px;
+    }
+    .item-page h1 {
+        font-size: 23.5px;
+    }
+    #contact-us .wrapper .row {
+        padding: 0 10px;
+    }
+    #verification input {
+        width: calc(100% - 121px);
+    }
+    #verification input[type="submit"] {
+        font-size: 15px;
+        line-height: 120%;
+    }
+    .profile-management-products ul li a {
+        font-size: 12px;
+        color: #EDEDED;
+        font-family: "Roboto", sans-serif;
+    }
+    .all-rights {
+        font-size: 12px;
+    }
+}
