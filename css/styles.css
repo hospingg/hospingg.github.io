@@ -377,7 +377,7 @@ form .w-2:last-child{
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 0;
-    margin: 0;
+    margin: 0 20px;
     max-width: 1566px;
     width: 100%;
 }
@@ -411,7 +411,7 @@ form .w-2:last-child{
 
 .note div{
     width: 5px;
-    background-color: #EB5757;
+    background-color: #20b35f;
     height: calc(100% + 10%);
     border-radius: 10px;
 }
@@ -453,6 +453,13 @@ form .w-2:last-child{
     background-position-y: -76px;
     background-position-x: center;
 }
+.item-page#cabbage{
+    background: url(../images/cabbage_bg.svg) #f7f7f7 no-repeat;
+    background-position-y: -76px;
+    background-position-x: center;
+    background-size: cover;
+}
+
 
 .item-page .wrapper .row .w-2:last-child .option-list{
     padding-left: 15px;
@@ -477,6 +484,9 @@ form .w-2:last-child{
 .option-list{
     padding: 15px 0;
     color: #57984C;
+    flex-grow: 1;
+    min-width: auto;
+    margin: 0 30px ;
 }
 .option-list h4{
     padding-bottom: 11px;
@@ -506,6 +516,10 @@ form .w-2:last-child{
     justify-content: space-evenly;
     margin: 30px 0 26px;
     transition: box-shadow 0.2s;
+    justify-content: center;
+}
+.PDF a{
+    margin: 0;
 }
 
 .PDF:hover{
@@ -525,16 +539,21 @@ form .w-2:last-child{
     margin: 0;
 }
 .item-page h1{
-    color: #57984C;
+    color: #324950;
     margin: 0;
     font-size: 54px;
     font-family: "Roboto Slab", serif;
     line-height: 142.7%;
-    padding-bottom: 35px;
+    padding-bottom: 0;
+    margin-right: 10px;
 }
-
-.item-page h1::first-line{
-    color: #324950;
+.item-page .w-2 h1:last-of-type{
+    padding-bottom: 35px;
+    color: #57984C;
+}
+.item-page .wrapper .row:last-child{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #tomato.note div{
@@ -542,12 +561,25 @@ form .w-2:last-child{
     width: 80px;
     background: url(../images/TomatoIcon.svg) no-repeat;
 }
+
+#cabbage.note div{
+    height: 80px;
+    width: 80px;
+    background: url(../images/cabbage-svgrepo-com.svg) no-repeat;
+}
 #tomato.note {
     font-size: 30px;
     color: #CF2333;
     font-weight: bold;
     font-family: "Roboto Slab", serif;
     grid-template-columns: 80px 395px;
+}
+#cabbage.note {
+    font-size: 30px;
+    color: #73cf23;
+    font-weight: bold;
+    font-family: "Roboto Slab", serif;
+    grid-template-columns: 80px calc(100% - 120px);
 }
 
 .content .wrapper {
@@ -664,7 +696,7 @@ form .w-2:last-child{
 }
 
 .product-page{
-    background-color: #fcf0f0;
+    background-color: #f0fcf0;
 }
 .product-page h2{
     font-size: 44px;
@@ -699,6 +731,10 @@ form .w-2:last-child{
     overflow: hidden;
     flex-grow: 1;
     min-width: 321px;
+}
+#product h4{
+    text-transform:uppercase;
+    line-height: 142.7%;
 }
 
 #product:hover img{

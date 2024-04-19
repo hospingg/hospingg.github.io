@@ -39,7 +39,7 @@
     .product-image{
         align-items: center;
     }
-    .item-page h1 {
+    .item-page h1:last-child {
         padding: 0 10px 35px 0;
     }
 }
@@ -70,8 +70,8 @@
         width: fit-content;
     }
     
-    #tomato.note{
-        grid-template-columns: 80px calc(100% - 80px);
+    #cabbage.note{
+        grid-template-columns: 80px calc(100% - 100px)
     }
     
     .note{
@@ -87,6 +87,10 @@
     .main-page .wrapper .row{
         padding: 0 35px;
         display: block;
+    }
+    h2 {
+        font-size: 55px;
+        margin: 0 20px;
     }
     .search-nav-bar {
         height: 100%;
@@ -123,7 +127,6 @@
     .nav-bar ul li{
         width: 100%;
     }
-
     .nav-bar ul li a {
         display: block;
         width: 100%;
@@ -135,6 +138,12 @@
     #product {
         /* margin: 0 0 30px ; */
         min-width: auto;
+    }
+    .product-image img{
+        margin-top: 20px;
+    }
+    .item-page a {
+        width: 100%;
     }
     .profile-management-products ul li{
         margin: 0 10px;
@@ -151,7 +160,7 @@
         padding: 0 10px;
     }
     .item-page h1 {
-        font-size: 30px;
+        font-size: 45px;
     }
     .product-page h2 {
         text-align: center;
@@ -180,7 +189,9 @@
     #product img {
         max-height: 150px;
     }
-    
+    .product-list ul {
+        flex-direction: column;
+    }
     
 }
 @media screen and (max-width: 400px) {
@@ -202,11 +213,11 @@
     h4{
         font-size: 15px;
     }
-    #tomato.note {
+    #cabbage.note {
         font-size: 20px;
-        grid-template-columns: 60px calc(100% - 60px);
+        grid-template-columns: 60px calc(100% - 80px);
     }
-    #tomato.note div {
+    #cabbage.note div {
         height: 60px;
         width: 100%;
         background-size: contain;
@@ -224,7 +235,7 @@
         padding: 0 25px;
     }
     .item-page h1 {
-        font-size: 23.5px;
+        font-size: 30px;
     }
     #contact-us .wrapper .row {
         padding: 0 10px;
