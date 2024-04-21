@@ -44,11 +44,15 @@ var app = new Vue({
             }]},
         ],
         product: {},
-        btnVisible:0
+        cartItems:null,
+        addToCartBtnVisible:0,
+        submitBtnVisible:0,
+        contactFields:[]
     },
     mounted:function(){
         this.getProduct();
         this.checkInCart();
+        this.getProduct();
     },
     methods:{
         getProduct:function(){
@@ -63,18 +67,98 @@ var app = new Vue({
             }
         },
         addToCart:function(id) {
-            var cart = [];
+            let cart = [];
             if(window.localStorage.getItem('cart')) {
                 cart = window.localStorage.getItem('cart').split(', ');
             }
             if(cart.indexOf(String(id))==-1) {
                 cart.push(id);
                 window.localStorage.setItem('cart',cart.join(', '));
-                this.btnVisible=1;
+                this.addToCartBtnVisible=1;
+                
             }
         },
         checkInCart:function(){
-            if(this.product && this.product.id && window.localStorage.getItem('cart').split(', ').indexOf(String(this.product.id))!=-1) this.btnVisible=1;
+            if(this.product && this.product.id && window.localStorage.getItem('cart')!=null && window.localStorage.getItem('cart').split(', ').indexOf(String(this.product.id))!=-1) {
+                this.addToCartBtnVisible=1}
+            if(window.localStorage.getItem('cart')!=null){
+                this.cartItems = window.localStorage.getItem('cart').split(', ');
+            };
+        },
+        getProductToCart:function(id) {
+            let cart = this.products.find(cart => cart.id == id);
+            return cart ? cart : 'Продукт не знайдено';
+        },
+        removeToCart:function(id) {
+            let cart = [];
+            if(window.localStorage.getItem('cart')) {
+                cart = window.localStorage.getItem('cart').split(', ');
+            }
+            
+            const index = cart.indexOf(String(id));
+            if(index !== -1) {
+                cart.splice(index, 1); // Видаляємо елемент з масиву корзини
+            
+                window.localStorage.setItem('cart', cart.join(', ')); // Оновлюємо localStorage
+    
+                
+                // Оновлюємо дані корзини та відображення кнопки
+
+                this.addToCartBtnVisible = 0;
+                
+                this.cartItems = cart;
+                if(cart.length==[]){
+                    localStorage.removeItem("cart");
+                    this.cartItems=null;
+                }
+            }
+        },
+        makeOrder:function(){
+            // Створення нового об'єкта контактної інформації та додавання його до масиву
+            newContactFields = {
+                name: this.contactFields.name,
+                company_name: this.contactFields.company_name,
+                position: this.contactFields.position,
+                city: this.contactFields.city,
+                country: this.contactFields.country,
+                telephone: this.contactFields.telephone,
+                email: this.contactFields.email,
+                you_are: this.contactFields.you_are,
+                you_are_other: this.contactFields.you_are_other,
+                interesting_in: this.contactFields.interesting_in,
+                code: this.contactFields.code
+            };
+            this.contactFields.push(newContactFields);
+            
+            // Виведення інформації, що була заповнена користувачем
+            console.log("Order details:", newContactFields);
+            
+            // Видалення товарів з корзини
+            this.cartItems = [];
+            // Видалення товарів з localStorage
+            localStorage.removeItem("cart");
+
+            let order = document.querySelector(".order");
+            let list = document.createElement("ul");
+
+            // Перебір інших полів форми та додавання їх до списку
+            for (let field in newContactFields) {
+                if (field !== "code") { // Пропустити поле з іменем, оскільки воно вже виведено окремо
+                    let li = document.createElement("li");
+                    let p = document.createElement("p");
+                    p.textContent = field.replace(/_/g, " ") + ": " + newContactFields[field]; // Заміна підкреслення на пробіл для кращого відображення
+                    li.appendChild(p);
+                    list.appendChild(li);
+                }
+            }
+
+            order.appendChild(list);
+
+            let formElement = document.querySelector('#contact-us .wrapper .row');
+            formElement.style.display = 'none';
+
+            let orderElement = document.querySelector('.order');
+            orderElement.style.display = '';
         }
     }
 })

@@ -2,7 +2,7 @@ let button = document.getElementById('burger-bar');
 let navigation = document.getElementsByClassName('nav-bar')[0];
 let list = document.querySelector('.nav-bar ul');
 let header = document.getElementsByTagName('header')[0];
-let elementsWithDisplayNone = document.querySelectorAll('.product-list, .content, .profile-management-products-social-media, #slider, .bg, #contact-us, .our-adress, .product-page, .item-page, .logo, .search');
+let elementsWithDisplayNone = document.querySelectorAll('div.item-page, .product-page, .product-list, .content, .profile-management-products-social-media, #slider, .bg, #contact-us, .our-adress, .item-page, .logo, .search');
 let whiteHeader = document.getElementById('white-header');
 
 document.getElementById('burger-bar').addEventListener('click', function() {
