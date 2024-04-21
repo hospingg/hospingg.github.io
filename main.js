@@ -98,7 +98,9 @@ var app = new Vue({
             const index = cart.indexOf(String(id));
             if(index !== -1) {
                 cart.splice(index, 1); 
+            
                 window.localStorage.setItem('cart', cart.join(', ')); 
+
                 this.addToCartBtnVisible = 0;
                 
                 this.cartItems = cart;
@@ -109,6 +111,7 @@ var app = new Vue({
             }
         },
         makeOrder:function(){
+            
             newContactFields = {
                 name: this.contactFields.name,
                 company_name: this.contactFields.company_name,
@@ -123,18 +126,23 @@ var app = new Vue({
                 code: this.contactFields.code
             };
             this.contactFields.push(newContactFields);
+            
+            
             console.log("Order details:", newContactFields);
             
             this.cartItems = [];
+            
             localStorage.removeItem("cart");
 
             let order = document.querySelector(".order");
             let list = document.createElement("ul");
+
+            
             for (let field in newContactFields) {
                 if (field !== "code") { 
                     let li = document.createElement("li");
                     let p = document.createElement("p");
-                    p.textContent = field.replace(/_/g, " ") + ": " + newContactFields[field];
+                    p.textContent = field.replace(/_/g, " ") + ": " + newContactFields[field]; 
                     li.appendChild(p);
                     list.appendChild(li);
                 }
