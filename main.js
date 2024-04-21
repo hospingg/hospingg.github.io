@@ -97,13 +97,8 @@ var app = new Vue({
             
             const index = cart.indexOf(String(id));
             if(index !== -1) {
-                cart.splice(index, 1); // Видаляємо елемент з масиву корзини
-            
-                window.localStorage.setItem('cart', cart.join(', ')); // Оновлюємо localStorage
-    
-                
-                // Оновлюємо дані корзини та відображення кнопки
-
+                cart.splice(index, 1); 
+                window.localStorage.setItem('cart', cart.join(', ')); 
                 this.addToCartBtnVisible = 0;
                 
                 this.cartItems = cart;
@@ -114,7 +109,6 @@ var app = new Vue({
             }
         },
         makeOrder:function(){
-            // Створення нового об'єкта контактної інформації та додавання його до масиву
             newContactFields = {
                 name: this.contactFields.name,
                 company_name: this.contactFields.company_name,
@@ -129,24 +123,18 @@ var app = new Vue({
                 code: this.contactFields.code
             };
             this.contactFields.push(newContactFields);
-            
-            // Виведення інформації, що була заповнена користувачем
             console.log("Order details:", newContactFields);
             
-            // Видалення товарів з корзини
             this.cartItems = [];
-            // Видалення товарів з localStorage
             localStorage.removeItem("cart");
 
             let order = document.querySelector(".order");
             let list = document.createElement("ul");
-
-            // Перебір інших полів форми та додавання їх до списку
             for (let field in newContactFields) {
-                if (field !== "code") { // Пропустити поле з іменем, оскільки воно вже виведено окремо
+                if (field !== "code") { 
                     let li = document.createElement("li");
                     let p = document.createElement("p");
-                    p.textContent = field.replace(/_/g, " ") + ": " + newContactFields[field]; // Заміна підкреслення на пробіл для кращого відображення
+                    p.textContent = field.replace(/_/g, " ") + ": " + newContactFields[field];
                     li.appendChild(p);
                     list.appendChild(li);
                 }
