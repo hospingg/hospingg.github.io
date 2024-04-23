@@ -46,7 +46,6 @@ var app = new Vue({
         product: {},
         cartItems:null,
         addToCartBtnVisible:0,
-        submitBtnVisible:0,
         contactFields:[]
     },
     mounted:function(){
@@ -110,8 +109,22 @@ var app = new Vue({
                 }
             }
         },
+        isFormValid:function() {
+            if(this.contactFields.name &&
+                this.contactFields.company_name &&
+                this.contactFields.position &&
+                this.contactFields.city &&
+                this.contactFields.country &&
+                this.contactFields.telephone &&
+                this.contactFields.email &&
+                this.contactFields.you_are &&
+                this.contactFields.interesting_in &&
+                this.contactFields.code){
+                return true;
+            }
+            ;
+        },
         makeOrder:function(){
-            
             newContactFields = {
                 name: this.contactFields.name,
                 company_name: this.contactFields.company_name,
@@ -126,9 +139,6 @@ var app = new Vue({
                 code: this.contactFields.code
             };
             this.contactFields.push(newContactFields);
-            
-            
-            console.log("Order details:", newContactFields);
             
             this.cartItems = [];
             
@@ -155,6 +165,7 @@ var app = new Vue({
 
             let orderElement = document.querySelector('.order');
             orderElement.style.display = '';
+            
         }
     }
 })

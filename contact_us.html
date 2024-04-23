@@ -125,7 +125,9 @@
                             <div id="verification">
                                 <img src="images/code.png" alt="code">
                                 <input name="code" type="text" required v-model="contactFields.code" >
-                                <input class="submit-btn" v-if="cartItems!=null" name="submit" type="submit" value="Send Message" @click.prevent="makeOrder()">
+                                <input class="submit-btn" v-if="!isFormValid() && cartItems!=null" name="submit" type="submit" value="Send Message">
+                                <input class="submit-btn" v-if="cartItems!=null && isFormValid()" name="submit" type="submit" value="Send Message" @click.prevent="makeOrder()">
+
                                 <input class="submit-btn" id="empty-btn" type="button"  v-if="cartItems==null" value="The Cart is Empty">
                             </div>
                         </div>
