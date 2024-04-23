@@ -109,21 +109,6 @@ var app = new Vue({
                 }
             }
         },
-        isFormValid:function() {
-            if(this.contactFields.name &&
-                this.contactFields.company_name &&
-                this.contactFields.position &&
-                this.contactFields.city &&
-                this.contactFields.country &&
-                this.contactFields.telephone &&
-                this.contactFields.email &&
-                this.contactFields.you_are &&
-                this.contactFields.interesting_in &&
-                this.contactFields.code){
-                return true;
-            }
-            ;
-        },
         makeOrder:function(){
             newContactFields = {
                 name: this.contactFields.name,
@@ -143,7 +128,7 @@ var app = new Vue({
             this.cartItems = [];
             
             localStorage.removeItem("cart");
-
+            alert("Your form has been sent, thank you for your order")
             let order = document.querySelector(".order");
             let list = document.createElement("ul");
 
