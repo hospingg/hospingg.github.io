@@ -8,6 +8,7 @@ html{
     flex-direction: row;
     height: 100vh;
     flex-wrap: wrap;
+    overflow: hidden;
 }
 
 .image-side {
