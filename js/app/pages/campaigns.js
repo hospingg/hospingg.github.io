@@ -118,7 +118,7 @@ export const campaigns = {
                         <tbody>
                             <tr v-for="(item, i) in data.items">
                                 <td class="id"><p>{{item.id}}</p> </td>
-                                <td class="id"><p>(Toggle)</p> </td>
+                                <td class="id"><p><i class="fa-solid fa-toggle-off fa-2xl"></i></p> </td>
                                 <td ><router-link class="title" :to="'/campaign/'+item.id">{{item.title}}</router-link></td>
                                 <td class="id">
                                     <a  href="#" @click.prevent="$refs.details.active=1; getDetails(item.id, 1)">
