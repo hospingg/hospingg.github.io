@@ -5,8 +5,8 @@ export const msg = {
             success: "",
             t1: "",
             t2: "",
-            // confirmTitle: "Please confirm next action",
-            // confirm: "",
+            confirmTitle: "Please confirm next action",
+            confirm: "",
             code: 0,
             interval: "",
         }
@@ -66,18 +66,52 @@ export const msg = {
                     self.fadeOut(block, 1000);
                 }, 3000);
             }, 500);
-        }
+        },
+        confirmFun(title, text) {
+            this.code = 0;
+            var self = this;
+
+            return new Promise(function(resolve, reject) {
+                self.confirmTitle = title;
+                self.confirm = text;
+                self.$refs.confirm.active = 1;
+                self.interval = setInterval(function() {
+                    if (self.code > 0) resolve();
+                }, 100);
+            }).then(function() {
+                clearInterval(self.interval);
+                self.$refs.confirm.active = 0;
+
+                if (self.code == 1) {
+                    return true;
+                }
+                if (self.code == 2) {
+                    return false;
+                }
+            });
+        },
     },
     template: `
         <div class="msg alert" v-show="alert">
-            <div class="wrapper al">
+            <div class="al">
                 {{alert}} <i class="fas fa-times-circle"></i> 
             </div>
         </div>
         <div class="msg success" v-show="success">
-            <div class="wrapper al">
+            <div class="al">
                 {{success}} <i class="fas fa-check-circle"></i> 
             </div>
         </div>
+        <popup ref="confirm" :title="confirmTitle">
+            <div class ="msg-text"> 
+                <i class="fas fa-info-circle"></i> <p> {{confirm}} </p>
+                </div>
+            </div>
+                <div class="btns">
+                    <button class="new-btn" href="#" @click.prevent="code=1">Yes</button>
+                    <button class="new-btn" href="#" @click.prevent="code=2">No</button>
+                </div>
+            </div>
+        </popup>
     `
 };
