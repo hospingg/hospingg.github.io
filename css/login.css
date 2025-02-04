@@ -1,7 +1,4 @@
-html{
-    font-size: 16px;
-    --heared-color: rgb(58 58 58);
-}
+
 
 .login-page {
     display: flex;
@@ -48,24 +45,7 @@ html{
     color: #FFFF;
     font-size: 1.2em;
 }
-.form{
-    height: 100%;
-    width: 100%;
-    /* margin: 0 auto; */
-}
+
 form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 100%;
-    gap: 20px;
-    text-align: right;
     padding: 20vh 125px;
-}
-.form label{
-    display: flex;
-    font-weight: 600;
-    font-family: Arial, Helvetica, sans-serif;
-    flex-direction: column;
-    gap: 5px;
-}
+  }

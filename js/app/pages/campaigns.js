@@ -87,6 +87,9 @@ export const campaigns = {
         }
     },
     template: `
+
+        <link rel="stylesheet" href="./css/campaings.css">
+        <link rel="stylesheet" href="/css/toogle.css">
         <div class="inside-content">
             <Header ref="header" />
             <div id="spinner" v-if="loader"></div>
@@ -96,10 +99,25 @@ export const campaigns = {
                         <h1>Campaigns</h1>                    
                     </div>
                     <div class="w20 ptb20 ac panel"><input type="date" v-model="date" @change="get()" /> - <input type="date" v-model="date2" @change="get()" /></div>
-                    <button class="new-btn">
+                    <button class="new-btn" href="#" @click.prevent="parent.formData={}; $refs.new.active=1">
                         New <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>
+                <popup ref="new" :title="(parent.formData && parent.formData.id) ? 'Edit campaign' : 'New campaign'">
+                    <div class="form">
+                        <form @submit.prevent="action()" v-if="parent.formData">
+                                <label>
+                                    Name
+                                    <input type="text" v-model="parent.formData.title" required>
+                                </label>
+
+                            <div class="btns col">
+                                <button class="btn" v-if="parent.formData && parent.formData.id">EDIT</button>
+                                <button class="btn" v-if="parent.formData && !parent.formData.id">ADD</button>
+                            </div>
+                        </form>
+                    </div>
+                </popup>
 
                 <div class="table" v-if="data.items != ''">
                     <table>
@@ -118,7 +136,9 @@ export const campaigns = {
                         <tbody>
                             <tr v-for="(item, i) in data.items">
                                 <td class="id"><p>{{item.id}}</p> </td>
-                                <td class="id"><p><i class="fa-solid fa-toggle-off fa-2xl"></i></p> </td>
+                                <td class="id toogle">
+                                    <toogle v-model="item.published" @update:modelValue="parent.formData = item; action();" />
+                                </td>
                                 <td ><router-link class="title" :to="'/campaign/'+item.id">{{item.title}}</router-link></td>
                                 <td class="id">
                                     <a  href="#" @click.prevent="$refs.details.active=1; getDetails(item.id, 1)">

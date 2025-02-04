@@ -1,14 +1,31 @@
+html{
+  font-size: 16px;
+  --heared-color: rgb(58 58 58);
+}
+
 h1, p, td{
   font-family: Arial, Helvetica, sans-serif;
 }
+ul{
+  padding: 0;
+  margin: 0;
+}
 a{
   color: #000000;
+  text-decoration: none;
 }
 a:checked{
   color: #000000;
 }
+a:hover{
+  text-decoration: none;
+}
 p{
   margin: 0;
+}
+li{
+  list-style: none;
+  text-decoration: none;
 }
 
 body {
@@ -31,6 +48,8 @@ input{
 }
 
 input[type="date"]{
+  text-align: left;
+  padding: 0 10px;
   background: transparent;
 }
 button {

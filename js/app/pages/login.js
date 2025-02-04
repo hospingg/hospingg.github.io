@@ -36,6 +36,7 @@ export const login = {
   },
 
   template: `
+    <link rel="stylesheet" href="./css/login.css">
     <div class= "login-page">
         <msg ref="msg"/>
         <div class="image-side">

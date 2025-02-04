@@ -2,6 +2,28 @@
 .page{
   padding: 50px 0;
 }
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+  gap: 20px;
+  text-align: right;
+}
+
+.form{
+  height: 100%;
+  width: 100%;
+  /* margin: 0 auto; */
+}
+.form label{
+  display: flex;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  flex-direction: column;
+  gap: 5px;
+}
+
 
 .register-page {
   display: flex;
@@ -194,9 +216,9 @@ td a {
   
 }
 
-td a:hover {
+/* td a:hover {
   text-decoration: underline;
-}
+} */
 
 
 /* popup */
@@ -243,6 +265,7 @@ td a:hover {
 
 .popup-inner {
   padding: 20px;
+  padding-bottom: 40px;
   text-align: center;
 }
 
@@ -253,6 +276,13 @@ td a:hover {
   justify-content: start;
   gap: 10px;
   max-height: 35px;
+}
+.btns.col{
+  flex-direction: column;
+  width: 100%;
+}
+form .new-btn{
+  padding: 10px;
 }
 
 .msg-text{
