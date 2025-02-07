@@ -24,7 +24,7 @@ export const popup = {
     template: `
         <template v-if="active == 1">
             <div class="popup-back"></div>
-            <div class="popup" ref="popup">
+            <div class="popup" :style="{top:top, 'min-width':widthVal, 'margin-left':ml, left:left, height:height}" ref="popup">
                 <div class="popup-title">
                         <div class="head-title"> <p>{{title}}</p></div> 
                         <a class="close-btn" href="#" @click.prevent="active=0"><i class="fas fa-window-close fa-lg"></i></a>

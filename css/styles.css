@@ -1,4 +1,9 @@
-
+html{
+  --col-width: 500px;
+  --light-gray: #f6f6f6;
+  --td-img-size: 100px;
+  --select-img-height: 200px;
+}
 .page{
   padding: 50px 0;
 }
@@ -213,12 +218,14 @@ td a {
   display: block;
   text-decoration: none;
   color: #000000;
+  transition: color 0.1s ease-in-out;
   
 }
 
-/* td a:hover {
-  text-decoration: underline;
-} */
+td a:hover {
+  color: #00c276;
+
+}
 
 
 /* popup */
@@ -236,13 +243,13 @@ td a {
 
 .popup {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
   background: #dfe3e9;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  min-width: 500px;
+  /* min-width: 500px; */
 }
 .fas .fa-window-close{
   color: #2c2e32;
@@ -264,6 +271,7 @@ td a {
 }
 
 .popup-inner {
+  height: 100%;
   padding: 20px;
   padding-bottom: 40px;
   text-align: center;
@@ -310,4 +318,9 @@ form .new-btn{
 }
 .close-btn:hover{
   color: #00c276;
+}
+.select_img img{
+  object-fit: cover;
+  padding: 10px;
+  max-height: var(--select-img-height);
 }
