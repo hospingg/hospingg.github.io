@@ -21,11 +21,6 @@ ul{
     display: flex;
     gap: 10px;
 }
-#menu-options{
-    padding-left: 300px;
-    display: flex;
-    flex-direction: row-reverse;
-}
 .menu-option a {
     display: flex;
     color: #FFFF;
@@ -43,9 +38,11 @@ ul{
     padding: 0 30px;
 }
 .menu-option{
+    padding-left: 300px;
     height: 100%;
     display: flex;
     align-items: stretch;
+    flex-direction: row-reverse;
 }
 
 .menu-option p {
@@ -132,3 +129,28 @@ ul{
 .fas.fa-caret-down{
     color: #fff;
 }
+
+@media screen and (max-width: 992px) {
+    .menu-option{
+        padding-left: 0px;
+    }
+}
+
+
+@media screen and  (max-width: 768px) { 
+    .wrapper{
+        padding: 0 10px;
+    }
+    .menu-option a p {
+        /* display: none; */
+        font-size: 1em;
+    }
+
+ }
+
+ @media screen and (max-width: 576px) { 
+
+    .menu-option a p {
+        display: none;
+    }
+  }

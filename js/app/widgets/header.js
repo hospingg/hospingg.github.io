@@ -31,11 +31,19 @@ export const header = {
                     <img :src="parent.url+'/app/views/images/logo.svg'" />
                 </div>
                 <div id="menu">
-                    <div id="menu-options" :class="{active:menu == 1}" v-if="parent.user && parent.user.type && parent.user.type=='admin'">
-                        <div v-if="menu==1" class="al"><i class="fas fa-times" @click="menu=0"></i></div>
-                        <div class="menu-option"><router-link :class="{'router-link-active':$route.path.search('ca11paign')==1}" to="/campaigns"><p>Campaigns </p><i class="fas fa-bullhorn"></i></div>
-                        <div class="menu-option"><router-link :class="{'router-link-active':$route.path.search('us1er')==1}" to="/users"><p>Users </p><i class="fas fa-users"></i></div>
+                    <div class="menu-option">
+                        <router-link 
+                            :class="{'router-link-active': $route.path.startsWith('/campaign')}" 
+                            to="/campaigns">
+                            <p>Campaigns</p><i class="fas fa-bullhorn"></i>
+                        </router-link>
+                        <router-link 
+                            :class="{'router-link-active': $route.path.startsWith('/user')}" 
+                            to="/users">
+                            <p>Users</p><i class="fas fa-users"></i>
+                        </router-link>
                     </div>
+
 
                     <ul :class="{active:menu == 1}" v-if="parent.user && parent.user.type && parent.user.type!='admin'">
                         <li v-if="menu==1" class="al"><i class="fas fa-times" @click="menu=0"></i></li>

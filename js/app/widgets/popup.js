@@ -9,7 +9,9 @@ export const popup = {
                 var self = this;
                 setTimeout(function() {
                     let height = self.$refs.popup.clientHeight / 2;
+                    let width = self.$refs.popup.clientWidth / 2;
                     self.top = "calc(50% - " + height + "px)";
+                    self.left = "calc(50% - " + width + "px)";
                 }, 10);
             }
             if (this.fullscreen) {
@@ -18,13 +20,14 @@ export const popup = {
                 this.ml = 0;
                 this.left = 0;
                 this.height = "100%";
+                // this.margin = "50px";
             }
         }
     },
     template: `
         <template v-if="active == 1">
             <div class="popup-back"></div>
-            <div class="popup" :style="{top:top, 'min-width':widthVal, 'margin-left':ml, left:left, height:height}" ref="popup">
+            <div class="popup" :style="{top:top, 'min-width':widthVal, left:left, height:height}" ref="popup">
                 <div class="popup-title">
                         <div class="head-title"> <p>{{title}}</p></div> 
                         <a class="close-btn" href="#" @click.prevent="active=0"><i class="fas fa-window-close fa-lg"></i></a>

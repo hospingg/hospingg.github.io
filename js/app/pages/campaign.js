@@ -253,7 +253,7 @@ export const campaign = {
                             <h1 v-if="data && data.info">{{data.info.title}}</h1>
                         <!--- <div class="w50"></div> -->
                         <button class="new-btn" @click.prevent="parent.formData=data.info; $refs.new.active=1">
-                            Edit campaign <i class="fas fa-edit"></i>
+                            <span>Edit campaign</span> <i class="fas fa-edit"></i>
                         </button>
                     </div>
                 </div>
@@ -327,8 +327,8 @@ export const campaign = {
                 <div class="wrapper">
                     <div class="camp-panel">
                         <h2>Ads</h2>
-                        <div class="w60 ptb20 ac">
-                            <input type="date" v-model="date" @change="get()" /> - <input type="date" v-model="date2" @change="get()" />
+                        <div class="date-container">
+                            <input type="date" v-model="date" @change="get()" /> <span>-</span> <input type="date" v-model="date2" @change="get()" />
                         </div>
                         <button class="new-btn" href="#" @click.prevent="parent.formData={}; $refs.ad.active=1">
                             <i class="fas fa-plus"></i> New

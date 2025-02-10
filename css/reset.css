@@ -33,6 +33,10 @@ h2{
   font-weight: bold;
   margin: 40px 0;
 }
+canvas{
+  width: 100% !important;
+  /* Не хотіла його використовувати, але це стилі chart.js, котрі перекриваються інлайново, пріоритетність 1000 */
+}
 
 body {
   margin: 0;
@@ -144,3 +148,11 @@ label{
 }
 
 
+
+
+
+@media screen and  (max-width: 768px) { 
+input, select{
+  font-size: 0.7em;
+}
+}

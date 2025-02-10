@@ -16,6 +16,8 @@
 }
 .campaings-header{
     display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
     justify-content: space-between;
     flex-direction: row-reverse;
     align-items: center;
@@ -45,6 +47,21 @@
 .title{
     text-align: right;
     width: 100%;
+}
+
+.td-5{
+    text-align: right;
+    width: 20%;
+}
+
+.td-3{
+    text-align: right;
+    width: 33%;
+}
+
+.td-2{
+    text-align: right;
+    width: 50%;
 }
 
 .toggle-switch {
@@ -85,6 +102,7 @@
 
 .blocks{
     display: flex;
+    flex-wrap: wrap;
     flex-grow: 1;
     border-radius: 10px;
     border: #000000 2px solid;
@@ -102,6 +120,7 @@
     flex-grow: 1;
     color: #fff;
     padding: 20px 10px 5px;
+    flex-basis: 200px;
 }
 .data-container:not(:first-child){
     border-right: #000000 2px solid;
@@ -136,11 +155,13 @@
   }
   
   .charts-content{
+    flex-wrap: wrap;
     display: flex;
     flex-direction: row-reverse;
   }
   
   .analytics-flex{
+    flex-wrap: wrap;
     min-height: 100px;
     display: flex;
     flex-direction: row-reverse;
@@ -157,11 +178,13 @@
     justify-content: right;
   }
   .chart-list{
+    flex-grow: 1;
     background-color: var(--light-gray);
     padding: 10px;
   }
   
   .chart-outer{
+    flex-basis: 500px;
     margin-top: 50px;
     flex-grow: 1;
   }
@@ -187,6 +210,12 @@
     flex-direction: row-reverse;
     justify-content: space-between;
     padding: 20px 0;
+}
+.camp-panel h2{
+    margin: 0;
+}
+.camp-panel.tac{
+    align-items: center;
 }
 
 td.image img{
@@ -220,3 +249,86 @@ td.image a{
 .empty{
     text-align: right;
 }
+
+.user-menu{
+    flex-direction: row-reverse;
+    /* padding-bottom: 10px; */
+}
+.user-menu li{
+    background-color: #FFFF;
+    cursor: pointer;
+    border-radius: 7px;
+    color: #000000;
+    font-weight: bold;
+    padding: 10px;
+    box-shadow: rgb(0 0 0 / 49%) 0px 0px 2px;
+    border-bottom:  solid 4px #a8a8a8;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.user-menu li:hover{
+    background-color: #d6f4ed;
+}
+
+.user-menu li.active{
+    border-bottom:  solid 4px #00c276;
+}
+
+.user-info{
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 15px 0;
+}
+
+.user-info div{
+    text-align: right;
+    width: 50%;
+}
+
+.date-container{
+    gap: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 10px 0;
+}
+@media screen and (max-width: 1200px) {
+    .analytics-flex{
+        gap: 20px;
+        flex-direction: column-reverse;
+    }
+}
+
+@media screen and (max-width: 992px) {
+}
+
+
+@media screen and (max-width: 768px) {
+    
+}
+
+
+@media screen and (max-width: 576px) { 
+    /* .date-container{
+        flex-direction: column;
+    } */
+    .campaings-header{
+        text-align: right;
+        flex-direction: column;
+        align-items: stretch;
+        margin-bottom: 10px;
+    }
+    .camp-panel{
+        flex-direction: column;
+    }
+    .new-btn span{
+        display: none;
+    }
+    /* .camp-panel */
+    .chart-content{
+        font-size: 1em;
+    }
+
+ }

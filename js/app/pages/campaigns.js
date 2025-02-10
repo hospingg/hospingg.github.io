@@ -50,6 +50,32 @@ export const campaigns = {
                 self.parent.logout();
             });
         },
+        getDetails:function(bid = false, type = false) {
+            this.details = {};
+            if (bid) this.id = bid;
+            if (type) this.type = type;
+            if (this.id) bid = this.id;
+            if (this.type) type = this.type;
+
+            var self = this;
+            var data = self.parent.toFormData(self.parent.formData);
+
+            if (this.date != "") data.append('date', this.date);
+            if (this.date2 != "") data.append('date2', this.date2);
+            if (this.q != "") data.append('q', this.q);
+            if (this.sort != "") data.append('sort', this.sort);
+            if (bid != "") data.append('bid', this.bid);
+            if (type != "") data.append('type', this.type);
+
+            self.loader = 1;
+
+            axios.post(this.parent.url + "/site/getStatisticsDetails?auth=" + this.parent.user.auth, data).then(function(response) {
+                self.details = response.data;
+                self.loader = 0;
+            }).catch(function(error) {
+                self.parent.logout();
+            })
+        },
 
         action:function() {
             var self = this;
@@ -97,7 +123,6 @@ export const campaigns = {
                 if (item && item['line']) {
                     for(let i in item['line']) {
                         dates.push(i);
-                        
                         clicks.push(item['line'][i].clicks);
                         views.push(item['line'][i].views);
                         leads.push(item['line'][i].leads);
@@ -198,7 +223,7 @@ export const campaigns = {
                     <div class="ptb20 panel">
                         <h1>Campaigns</h1>                    
                     </div>
-                    <div class="w20 ptb20 ac panel"><input type="date" v-model="date" @change="get()" /> - <input type="date" v-model="date2" @change="get()" /></div>
+                    <div class="date-container"><input type="date" v-model="date" @change="get()" /> - <input type="date" v-model="date2" @change="get()" /></div>
                     <button class="new-btn" href="#" @click.prevent="parent.formData={}; $refs.new.active=1">
                         New <i class="fa-solid fa-plus"></i>
                     </button>
