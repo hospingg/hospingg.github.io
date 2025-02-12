@@ -338,7 +338,7 @@ export const user = {
                 </popup>
 
                 <div v-if="tab == 1">
-                    <div class="camp-panel tac">
+                    <div class="camp-panel aic">
                         <div class="w20 ptb10">
                             <h2>{{tabs[tab]}}</h2>
                         </div>
@@ -436,7 +436,7 @@ export const user = {
                 </div>
 
                 <div v-if="tab == 2">
-                    <div class="camp-panel tac">
+                    <div class="camp-panel aic">
                         <div class="w30 ptb10">
                             <h2>{{tabs[tab]}}</h2>
                         </div>
@@ -523,7 +523,7 @@ export const user = {
                 </div>
 
                 <div v-if="tab == 0">
-                    <div class="camp-panel tac">
+                    <div class="camp-panel aic">
                         <div class="w20 ptb10">
                             <h2>{{tabs[tab]}}</h2>
                         </div>

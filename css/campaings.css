@@ -3,6 +3,9 @@
     padding: 0 20px;
     max-height: 40px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .wrapper.flex{
@@ -214,7 +217,7 @@
 .camp-panel h2{
     margin: 0;
 }
-.camp-panel.tac{
+.aic{
     align-items: center;
 }
 

@@ -31,7 +31,7 @@ export const header = {
                     <img :src="parent.url+'/app/views/images/logo.svg'" />
                 </div>
                 <div id="menu">
-                    <div class="menu-option">
+                    <div class="menu-option" v-if="parent.user && parent.user.type && parent.user.type === 'admin'">
                         <router-link 
                             :class="{'router-link-active': $route.path.startsWith('/campaign')}" 
                             to="/campaigns">
@@ -45,13 +45,26 @@ export const header = {
                     </div>
 
 
-                    <ul :class="{active:menu == 1}" v-if="parent.user && parent.user.type && parent.user.type!='admin'">
-                        <li v-if="menu==1" class="al"><i class="fas fa-times" @click="menu=0"></i></li>
-                        <li><router-link to="/statistics"><i class="fas fa-chart-area"></i> Statistics</router-link></li>
-                        <li><router-link to="/ads"><i class="fas fa-image"></i> Ads</router-link></li>
-                        <li><router-link to="/sites"><i class="fas fa-chrome"></i> Sites</router-link></li>
-                        <li><router-link to="/payments"><i class="fas fa-credit-card"></i> Payments</router-link></li>
-                    </ul>
+                    
+                    <div class="menu-option" :class="{active:menu == 1}" v-if="parent.user && parent.user.type && parent.user.type != 'admin'">
+                        <div v-if="menu==1" class="al"><i class="fas fa-times" @click="menu=0"></i></div>
+                        <router-link to="/statistics">
+                            <p>Statistics</p>
+                            <i class="fas fa-chart-area"></i>
+                        </router-link>
+                        <router-link to="/ads">
+                            <p>Ads</p>
+                            <i class="fas fa-image"></i>
+                        </router-link>
+                        <router-link to="/sites">
+                            <p>Sites</p>
+                            <i class="fab fa-chrome"></i>
+                        </router-link>
+                        <router-link to="/payments">
+                            <p>Payments</p>
+                            <i class="fas fa-credit-card"></i>
+                        </router-link>
+                    </div>
                 </div>
                 <div class="user-profile" id="user-top" v-if="parent.user && parent.user.user">
                     <div id="user-circle" @click="toogleActive()"><p>{{parent.user.user[0]}}</p></div>

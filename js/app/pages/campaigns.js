@@ -299,13 +299,13 @@ export const campaigns = {
                                 <th class="id">Clicks</th>
                                 <th class="id">Leads</th>
                                 <th class="id">Fraud clicks</th>
-                                <th class="actions">Actions</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-for="(item, i) in data.items">
                                 <td class="id"><p>{{item.id}}</p> </td>
-                                <td class="id toogle">
+                                <td class="id toogle ">
                                     <toogle v-model="item.published" @update:modelValue="parent.formData = item; action();" />
                                 </td>
                                 <td ><router-link class="title" :to="'/campaign/'+item.id">{{item.title}}</router-link></td>

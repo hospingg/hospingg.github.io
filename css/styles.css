@@ -111,6 +111,11 @@ h1 {
   color: black;
 }
 
+
+.popup-inner .image{
+  width: 100%;
+}
+
 .popup-text {
   font-size: 15px;
 }
@@ -207,7 +212,7 @@ td:first-child{
   border-right: none;
 }
 
-td a{
+td a, td.title p{
   width: 100%;
   margin: 0;
   height: 100%;
@@ -215,7 +220,6 @@ td a{
   text-decoration: none;
   color: #000000;
   transition: color 0.1s ease-in-out;
-  
 }
 
 td a:hover {

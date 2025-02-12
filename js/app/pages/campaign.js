@@ -56,31 +56,28 @@ export const campaign = {
             });
         },
 
-        getDetails:function(bid = false, type = false) {
+        getDetails: function(bid=false, type=false) {
+            console.log(bid, type)
             this.details = {};
-            if (bid) this.id = bid;
-            if (type) this.type = type;
-            if (this.id) bid = this.id;
-            if (this.type) type = this.type;
-
+            if(bid) this.id=bid;
+            if(type) this.type=type;
+            if(this.id) bid=this.id;
+            if(this.type) type=this.type;
             var self = this;
             var data = self.parent.toFormData(self.parent.formData);
-
-            if (this.date != "") data.append('date', this.date);
-            if (this.date2 != "") data.append('date2', this.date2);
-            if (this.q != "") data.append('q', this.q);
-            if (this.sort != "") data.append('sort', this.sort);
-            if (bid != "") data.append('bid', this.bid);
-            if (type != "") data.append('type', this.type);
-
-            self.loader = 1;
-
-            axios.post(this.parent.url + "/site/getStatisticsDetails?auth=" + this.parent.user.auth, data).then(function(response) {
-                self.details = response.data;
-                self.loader = 0;
+            if(this.date!="") data.append('date', this.date);
+            if(this.date2!="") data.append('date2', this.date2);
+            if(this.q!="") data.append('q', this.q);
+            if(this.sort!="") data.append('sort', this.sort);
+            if(bid!="") data.append('bid', bid);
+            if(type!="") data.append('type', type);
+            self.loader=1;
+            axios.post(this.parent.url+"/site/getStatisticsDetails?auth="+this.parent.user.auth, data).then(function(response) {
+              self.details = response.data;
+              self.loader = 0;
             }).catch(function(error) {
-                self.parent.logout();
-            })
+              self.parent.logout();
+            });
         },
 
         action:function() {
@@ -388,7 +385,7 @@ export const campaign = {
                                     <th class="id">Clicks</th>
                                     <th class="id">Leads</th>
                                     <th class="id">Fraud clicks</th>
-                                    <th class="actions">Actions</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
