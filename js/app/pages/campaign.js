@@ -328,7 +328,7 @@ export const campaign = {
                             <input type="date" v-model="date" @change="get()" /> <span>-</span> <input type="date" v-model="date2" @change="get()" />
                         </div>
                         <button class="new-btn" href="#" @click.prevent="parent.formData={}; $refs.ad.active=1">
-                            <i class="fas fa-plus"></i> New
+                            <i class="fas fa-plus"></i> <p>New</p>
                         </button>
                     </div>
                     <popup ref="ad" :title="(parent.formData && parent.formData.id) ? 'Edit banner' : 'New banner'">

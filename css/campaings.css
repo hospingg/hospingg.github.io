@@ -105,7 +105,7 @@
 
 .blocks{
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     flex-grow: 1;
     border-radius: 10px;
     border: #000000 2px solid;
@@ -327,6 +327,13 @@ td.image a{
         flex-direction: column;
     }
     .new-btn span{
+        display: none;
+    }
+    .new-btn{
+        width: fit-content;
+        margin: 0 auto;
+    }
+    .new-btn p{
         display: none;
     }
     /* .camp-panel */

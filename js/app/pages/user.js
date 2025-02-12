@@ -278,7 +278,7 @@ export const user = {
                         <div class="pampaign-edit">
                             <h1 v-if="data && data.info">{{data.info.user}}</h1>
                             <button class="new-btn" @click.prevent="parent.formData=user; $refs.new.active=1">
-                                Edit user <i class="fas fa-edit"></i>
+                               <p>Edit user</p><i class="fas fa-edit"></i>
                             </button>
                         </div>
                     </div>

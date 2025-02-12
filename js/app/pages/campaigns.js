@@ -225,7 +225,7 @@ export const campaigns = {
                     </div>
                     <div class="date-container"><input type="date" v-model="date" @change="get()" /> - <input type="date" v-model="date2" @change="get()" /></div>
                     <button class="new-btn" href="#" @click.prevent="parent.formData={}; $refs.new.active=1">
-                        New <i class="fa-solid fa-plus"></i>
+                        <p>New</p> <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>
                 <popup ref="chart" fullscreen="true" title="Chart">

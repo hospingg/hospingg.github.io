@@ -99,7 +99,7 @@ export const users = {
                     </div>
                     <!-- <div class="w70"><search /></div> -->
                     <button class="new-btn" href="#" @click.prevent="parent.formData={}; $refs.new.active=1">
-                        New <i class="fa-solid fa-plus"></i>
+                        <p>New</p> <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>
                 <popup ref="new" :title="(parent.formData && parent.formData.id) ? 'Edit user' : 'New user'">
